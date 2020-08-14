@@ -15,6 +15,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <junit.version>5.3.2</junit.version>
+        <project.scm.id>github</project.scm.id>
     </properties>
 
     <dependencies>
@@ -31,7 +32,10 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <scm>
+        <developerConnection>scm:git:https://github.com/incodemode/mb2g-release-plugin.git</developerConnection>
+        <url>https://github.com/incodemode/mb2g-release-plugin.git</url>
+    </scm>
     <build>
         <extensions>
             <extension>
@@ -46,17 +50,23 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+
+            </plugin>
         </plugins>
     </build>
 
     <distributionManagement>
         <repository>
             <id>packagecloud.release</id>
-            <url>packagecloud+https://packagecloud.io/springframeworkguru/release</url>
+            <url>packagecloud+https://packagecloud.io/incodemode/release</url>
         </repository>
         <snapshotRepository>
             <id>packagecloud.snapshot</id>
-            <url>packagecloud+https://packagecloud.io/springframeworkguru/snapshot</url>
+            <url>packagecloud+https://packagecloud.io/incodemode/snapshot</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
