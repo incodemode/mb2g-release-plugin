@@ -7,4 +7,4 @@ workflows:
   maven_test:
     jobs:
       - maven/test:
-          command: '-X deploy'
+          command: '-X deploy -s .circleci/settings.xml'
