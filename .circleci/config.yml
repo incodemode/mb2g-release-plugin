@@ -6,9 +6,6 @@ orbs:
 workflows:
   maven_test:
     jobs:
-      - run:
-          name: fix git config
-          command:
       - maven/test:
           #command: '-X deploy -s .circleci/settings.xml'
           command: '-X --batch-mode release:prepare release:perform -s .circleci/settings.xml'
