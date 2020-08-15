@@ -3,13 +3,15 @@ version: 2.1
 orbs:
   maven: circleci/maven@1.0.1
 
-
 workflows:
   maven_test:
     jobs:
+      - run:
+          name: fix git config
+          command: git config user.email "lmdbluis@gmail.com"
+      - run:
+          name: fix git config 2
+          command: git config user.name "Via circleci build"
       - maven/test:
           #command: '-X deploy -s .circleci/settings.xml'
           command: '-X --batch-mode release:prepare release:perform -s .circleci/settings.xml'
-          pre-steps:
-            - run: git config user.email "lmdbluis@gmail.com"
-            - run: git config user.name "Via circleci build"
