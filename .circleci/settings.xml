@@ -10,5 +10,10 @@
             <id>packagecloud.snapshot</id>
             <password>${env.INCODEMODE_RELEASETOKEN}</password>
         </server>
+        <server>
+            <id>github</id>
+            <username>incodemode</username>
+            <password>${env.GITHUB_PASSWORD}</password>
+        </server>
     </servers>
 </settings>
